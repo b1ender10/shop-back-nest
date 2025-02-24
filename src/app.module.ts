@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
-import { Order } from './entities/order.entity';
-import { OrderItem } from './entities/order-item.entity';
-import { Product } from './entities/products.entity';
-import { Post } from './entities/posts.entity';
-import { Comment } from './entities/comment.entity';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UsersController } from './controllers/user.controller';
-import { UsersService } from './services/user.service';
+import { User } from './users/users.entity';
+import { Order } from './orders/orders.entity';
+import { OrderItem } from './order-items/order-items.entity';
+import { Product } from './products/products.entity';
+import { Post } from './posts/posts.entity';
+import { Comment } from './comments/comments.entity';
+import { UsersController } from './users/users.controller';
+import { UsersService } from './users/users.service';
 
 @Module({
   imports: [
@@ -26,7 +24,7 @@ import { UsersService } from './services/user.service';
     TypeOrmModule.forFeature([User, Order, OrderItem, Product, Post, Comment]),
   ],
   // ...rest of your module configuration
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  controllers: [UsersController],
+  providers: [UsersService],
 })
 export class AppModule {}
