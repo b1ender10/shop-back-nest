@@ -12,6 +12,8 @@ import { PostsController } from './posts/posts.controller';
 import { PostsService } from './posts/posts.service';
 import { CommentsController } from './comments/comments.controller';
 import { CommentsService } from './comments/comments.service';
+import { ProductsController } from './products/products.controller';
+import { ProductsService } from './products/products.service';
 
 @Module({
   imports: [
@@ -28,7 +30,7 @@ import { CommentsService } from './comments/comments.service';
     TypeOrmModule.forFeature([User, Order, OrderItem, Product, Post, Comment]),
   ],
   // ...rest of your module configuration
-  controllers: [UsersController, PostsController, CommentsController],
-  providers: [UsersService, PostsService, CommentsService],
+  controllers: [UsersController, PostsController, CommentsController, ProductsController],
+  providers: [UsersService, PostsService, CommentsService, ProductsService],
 })
 export class AppModule {}
