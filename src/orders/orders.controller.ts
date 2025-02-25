@@ -4,7 +4,7 @@ import { Order } from "./orders.entity";
 import { Body, Post } from '@nestjs/common';
 import { User } from 'src/users/users.entity';
 import { Comment } from 'src/comments/comments.entity';
-import { OrderItem } from 'src/order-items/order-items.entity';
+import { OrderItem } from 'src/order-items/orders-items.entity';
 
 export class CreateOrderDto {
   order_id: number;
