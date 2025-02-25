@@ -40,5 +40,10 @@ export class PostsController {
     return this.postsService.remove(+id);
   }
 
+  @Get(':id/comments')
+  findAllComments(@Param('id') id: string): Promise<Comment[]> {
+    return this.postsService.findAllComments(+id);
+  }
+
   
 }
