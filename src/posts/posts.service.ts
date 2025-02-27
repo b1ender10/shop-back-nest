@@ -37,4 +37,8 @@ export class PostsService {
   async findAllComments(id: number): Promise<Comment[]> {
     return this.commentsRepository.find({where: {post_id: id}});
   }
+
+  async createComment(id: number, comment: Comment): Promise<Comment> {
+    return this.commentsRepository.save({...comment, post_id: id});
+  }
 }

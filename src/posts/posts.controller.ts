@@ -45,5 +45,10 @@ export class PostsController {
     return this.postsService.findAllComments(+id);
   }
 
+  @Post(':id/comments')
+  createComment(@Param('id') id: string, @Body() createCommentDto: Comment): Promise<Comment> {
+    return this.postsService.createComment(+id, createCommentDto);
+  }
+
   
 }
